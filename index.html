@@ -6,6 +6,44 @@
     <title>Registrering</title>
 </head>
 <body>
+    <header>
+        <h1>Velkommen til Adrians idrettsdag!</h1>
+        <p>Her kan du registrere laget du skal delta i på idrettsdagen.</p>
+    </header>
+    <main>
+        <h2>Registrering</h2>
+        <form>
+            <label for="inpLagnavn">Lagnavn:</label>
+            <input type="text" id="inpLagnavn" required placeholder="lagnavn" />
 
+            <label for="selSkole">Skole:</label>
+            <select id="selSkole"></select>
+
+            <label for="selKlasse">Klasse:</label>
+            <select id="selKlasse"></select>
+
+            <label for="selIdrett">Idrett:</label>
+            <select id="selIdrett"></select>
+
+            <button type="submit">Registrer</button>
+        </form>
+    </main>
+    <footer>
+        <p>Siden er laget av Adrian A. Andersen, 2STB i faget IT1 | Ski Vgs. 2018</p>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD3HUb5UXOqK3DKE0NESbsYxM0y9sxuEo4",
+    authDomain: "project-idrettsdag.firebaseapp.com",
+    databaseURL: "https://project-idrettsdag.firebaseio.com",
+    projectId: "project-idrettsdag",
+    storageBucket: "project-idrettsdag.appspot.com",
+    messagingSenderId: "812385524527"
+  };
+  firebase.initializeApp(config);
+    </script>
+    <script src="js/registrering.js"></script>
 </body>
 </html>
