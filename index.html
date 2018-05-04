@@ -4,12 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <title>Registrering</title>
+    <link rel="stylesheet" href="css/regskjema.css" />
 </head>
 <body>
+    <div class="gridFill"></div>
     <header>
         <h1>Velkommen til Adrians idrettsdag!</h1>
         <p>Her kan du registrere laget du skal delta i på idrettsdagen.</p>
     </header>
+    <div class="gridFill"></div>
+    <div class="gridFill"></div>
     <main>
         <h2>Registrering</h2>
         <form>
@@ -28,21 +32,23 @@
             <button type="submit">Registrer</button>
         </form>
     </main>
+    <div class="gridFill"></div>
+    <div class="gridFill"></div>
     <footer>
         <p>Siden er laget av Adrian A. Andersen, 2STB i faget IT1 | Ski Vgs. 2018</p>
     </footer>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyD3HUb5UXOqK3DKE0NESbsYxM0y9sxuEo4",
-    authDomain: "project-idrettsdag.firebaseapp.com",
-    databaseURL: "https://project-idrettsdag.firebaseio.com",
-    projectId: "project-idrettsdag",
-    storageBucket: "project-idrettsdag.appspot.com",
-    messagingSenderId: "812385524527"
-  };
-  firebase.initializeApp(config);
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD3HUb5UXOqK3DKE0NESbsYxM0y9sxuEo4",
+            authDomain: "project-idrettsdag.firebaseapp.com",
+            databaseURL: "https://project-idrettsdag.firebaseio.com",
+            projectId: "project-idrettsdag",
+            storageBucket: "project-idrettsdag.appspot.com",
+            messagingSenderId: "812385524527"
+        };
+        firebase.initializeApp(config);
     </script>
     <script src="js/registrering.js"></script>
 </body>
