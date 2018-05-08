@@ -1,0 +1,100 @@
+{
+
+  "skoler": {
+    "Ski Vgs": {
+      "klasser": {
+        "1STA": {},
+        "1STB": {},
+        "1STC": {},
+        "2STA": {},
+        "2STB": {},
+        "2STC": {},
+        "3STA": {},
+        "3STB": {},
+        "3STC": {}
+      }
+    },
+    "As Vgs": {
+      "klasser": {
+        "1STA": {},
+        "1STB": {},
+        "1STC": {},
+        "2STA": {},
+        "2STB": {},
+        "2STC": {},
+        "3STA": {},
+        "3STB": {},
+        "3STC": {}
+      }
+    },
+    "Frogn Vgs": {
+      "klasser": {
+        "1STA": {},
+        "1STB": {},
+        "1STC": {},
+        "2STA": {},
+        "2STB": {},
+        "2STC": {},
+        "3STA": {},
+        "3STB": {},
+        "3STC": {}
+      }
+    },
+    "Vestby Vgs": {
+      "klasser": {
+        "1STA": {},
+        "1STB": {},
+        "1STC": {},
+        "2STA": {},
+        "2STB": {},
+        "2STC": {},
+        "3STA": {},
+        "3STB": {},
+        "3STC": {}
+      }
+    },
+    "Sami Vgs": {
+      "klasser": {
+        "1KL": {},
+        "2KL": {},
+        "3KL": {}
+      }
+    }
+  },
+  "lag": {
+    "Gutta Krutt": {
+      "skole": "Ski Vgs.",
+      "idrett": "Fotball"
+    },
+    "As Tigers": {
+      "skole": "As Vgs.",
+      "idrett": "Rumpeldunk"
+    },
+    "Frognerseteren": {
+      "skole": "Frogn Vgs.",
+      "idrett": "tennis"
+    },
+    "Vinnerlaget": {
+      "skole": "Vestby Vgs.",
+      "idrett": "vannpolo"
+    }
+  },
+  "idretter": {
+    "Fotball": {
+      "oppmotested": "Kunstgressbanen",
+      "oppmotetid": "08:00"
+    },
+    "Tennis": {
+      "oppmotested": "Tennisbanen",
+      "oppmotetid": "08:30"
+    },
+    "Vannpolo": {
+      "oppmotested": "Svømmehallen",
+      "oppmotetid": "08:00"
+    },
+    "Rumpeldunk": {
+      "oppmotested": "Idrettshallen",
+      "oppmotetid": "08:10"
+    }
+  }
+}

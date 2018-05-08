@@ -7,9 +7,29 @@
 </head>
 <body>
     <header>
-        <h1>Administrasjonsside for </h1>
+        <h1>Administrasjonsside for Adrians idrettsdag</h1>
     </header>
-    <main></main>
+    <main>
+        <h2>Administrer idretter</h2>
+        <form id="skjemaEndreIdretter">
+            <label for="selIdrettAdmin">Velg idrett</label>
+            <select id="selIdrettAdmin"></select>
+            <button>Fjern idrett</button>
+        </form>
+        <h2>Administrer skoler og klasser</h2>
+        <form id="skjemaEndreSkoler">
+            <label for="selSkoleAdmin">Velg skole</label>
+            <select id="selSkoleAdmin"></select>
+            <button>Fjern skole</button>
+        </form>
+        <h2>Administrer lag</h2>
+        <form id="skjemaEndreLag">
+            <label for="selLagAdmin">Velg lag</label>
+            <select id="selLagAdmin"></select>
+            <button>Rediger</button>
+            <button>Slett lag</button>
+        </form>
+    </main>
     <footer>Siden er laget av Adrian A. Andersen, 2STB i faget IT1 | Ski Vgs. 2018</footer>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
@@ -24,6 +44,6 @@
   };
   firebase.initializeApp(config);
     </script>
-    <script src="js/registrering.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 </html>
