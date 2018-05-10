@@ -11,11 +11,16 @@
     </header>
     <main>
         <h2>Administrer idretter</h2>
+        <form id="skjemaNyIdrett" style="display: none">
+            <label for="inpIdrettAdmin">Idrettens navn:</label>
+            <input type="text" id="selIdrettAdmin" required placeholder="Idrettens navn">
+        </form>
         <form id="skjemaEndreIdretter">
             <label for="selIdrettAdmin">Velg idrett</label>
             <select id="selIdrettAdmin"></select>
             <button>Fjern idrett</button>
         </form>
+        <button id="knappNyIdrett">Ny Idrett</button>
         <h2>Administrer skoler og klasser</h2>
         <form id="skjemaEndreSkoler">
             <label for="selSkoleAdmin">Velg skole</label>
