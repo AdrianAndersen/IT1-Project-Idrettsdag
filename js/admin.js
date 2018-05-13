@@ -12,12 +12,48 @@ const selSkoleAdmin = document.getElementById("selSkoleAdmin");
 const skjemaEndreLag = document.getElementById("skjemaEndreLag");
 const selLagAdmin = document.getElementById("selLagAdmin");
 
-const knappNyIdrett = document.getElementById("knappNyIdrett");
+const knappVisSkjemaNyIdrett = document.getElementById("knappVisSkjemaNyIdrett");
+const knappLeggTilNyIdrett = document.getElementById("knappLeggTilNyIdrett");
+const knappAvbrytNyIdrett = document.getElementById("knappAvbrytNyIdrett");
+
+const lagliste = document.getElementById("lagliste");
 
 function visSkjemaNyIdrett(event) {
-    console.log("Viser skjema");
-    skjemaNyIdrett.style.display = "block";
+    skjemaNyIdrett.style.display = "grid";
+    skjemaEndreIdretter.style.display = "none";
+    knappVisSkjemaNyIdrett.style.display = "none";
+}
+function skjulSkjemaNyIdrett(event) {
+    skjemaNyIdrett.style.display = "none";
+    skjemaEndreIdretter.style.display = "block";
+    knappVisSkjemaNyIdrett.style.display = "block";
+}
+// Viser bestillingene, sortert og filtrert
+function visSorterteLag() {
+    let romtypeId = document.getElementById("selRomtypeOversikt").value;
+    let orderby = document.getElementById("orderby").value;
+    lagliste.innerHTML = "";
+    // Sorterer etter valgt felt ved å bruke en anonym funksjon
+    lag.orderByChild(orderby).on("child_added", (snapshot) => {
+        let nyttLag = snapshot.val();
+        let lagnavn = snapshot.key;
+        // Filtrer slik at enten alle eller valgt romtype vises
+        if (romtypeId == "" || nyttLag.romtype === romtypeId) {
+            lagliste.innerHTML += `
+            <div class="kol-2"></div>
+            <p class="kol-2">${lagnavn}</p>
+            <p class="kol-2">${nyttLag.idrett}</p>
+            <p class="kol-2">${nyttLag.skole}</p>
+            <p class="kol-2">${nyttLag.skole}</p>
+            <div class="kol-2"></div>`;
+        }
+        // Viser overskriftene ettersom det finnes bestillinger
+        laglisteOverskrift.style.display = "grid";
+    });
 }
 
 // Lyttefunskjoner
-knappNyIdrett.addEventListener("click", visSkjemaNyIdrett);
+knappVisSkjemaNyIdrett.addEventListener("click", visSkjemaNyIdrett);
+knappAvbrytNyIdrett.addEventListener("click", skjulSkjemaNyIdrett);
+// Viser lagene når du går inn på siden
+visSorterteLag();

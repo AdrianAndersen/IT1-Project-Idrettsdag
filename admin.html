@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Admin</title>
+    <link rel="stylesheet" href="css/admin.css" />
 </head>
 <body>
     <header>
@@ -11,16 +12,25 @@
     </header>
     <main>
         <h2>Administrer idretter</h2>
+
+        <button id="knappVisSkjemaNyIdrett">Ny Idrett</button>
         <form id="skjemaNyIdrett" style="display: none">
+            <h3>Legg til en ny idrett</h3>
             <label for="inpIdrettAdmin">Idrettens navn:</label>
             <input type="text" id="selIdrettAdmin" required placeholder="Idrettens navn">
+            <label for="inpOppmotested">Oppmøtested:</label>
+            <input type="text" id="inpOppmotested" required>
+            <label for="inpOppmotetid">Oppmøtetid:</label>
+            <input type="time" id="inpOppmotetid" required>
+            <button id="knappLeggTilNyIdrett" type="submit">Legg til idrett</button>
+            <button id="knappAvbrytNyIdrett" type="button">Avbryt</button>
         </form>
         <form id="skjemaEndreIdretter">
             <label for="selIdrettAdmin">Velg idrett</label>
             <select id="selIdrettAdmin"></select>
+            <button>Rediger idrett</button>
             <button>Fjern idrett</button>
         </form>
-        <button id="knappNyIdrett">Ny Idrett</button>
         <h2>Administrer skoler og klasser</h2>
         <form id="skjemaEndreSkoler">
             <label for="selSkoleAdmin">Velg skole</label>
@@ -34,6 +44,32 @@
             <button>Rediger</button>
             <button>Slett lag</button>
         </form>
+        <div id="laglisteOverskrift" style="display: grid">
+            <div class="kol-2"></div>
+            <h1 class="kol-10">Lagoversikt</h1>
+            <div class="kol-2"></div>
+            <h4>Vis</h4>
+            <select class="kol-2" id="selRomtypeOversikt">
+                <option value="" selected>Alle</option>
+            </select>
+            <div class="kol-7"></div>
+            <div class="kol-2"></div>
+            <h4>Sorter etter</h4>
+            <select class="kol-2" id="orderby">
+                <option value="lagnavn">Lagnavn</option>
+                <option value="idrett">Idrett</option>
+                <option value="skole">Skole</option>
+                <option value="klasse">Klasse</option>
+            </select>
+            <div class="kol-7"></div>
+            <div class="kol-2"></div>
+            <h3 class="kol-2">Lagnavn</h3>
+            <h3 class="kol-2">Idrett</h3>
+            <h3 class="kol-2">Skole</h3>
+            <h3 class="kol-2">Klasse</h3>
+            <div class="kol-2"></div>
+        </div>
+        <div id="lagliste"></div>
     </main>
     <footer>Siden er laget av Adrian A. Andersen, 2STB i faget IT1 | Ski Vgs. 2018</footer>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>

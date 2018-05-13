@@ -3,61 +3,139 @@
   "skoler": {
     "Ski Vgs": {
       "klasser": {
-        "1STA": {},
-        "1STB": {},
-        "1STC": {},
-        "2STA": {},
-        "2STB": {},
-        "2STC": {},
-        "3STA": {},
-        "3STB": {},
-        "3STC": {}
+        "1STA": {
+          "antallElever": 30
+        },
+        "1STB": {
+          "antallElever": 30
+        },
+        "1STC": {
+          "antallElever": 30
+        },
+        "2STA": {
+          "antallElever": 30
+        },
+        "2STB": {
+          "antallElever": 30
+        },
+        "2STC": {
+          "antallElever": 30
+        },
+        "3STA": {
+          "antallElever": 30
+        },
+        "3STB": {
+          "antallElever": 30
+        },
+        "3STC": {
+          "antallElever": 30
+        }
       }
     },
     "As Vgs": {
       "klasser": {
-        "1STA": {},
-        "1STB": {},
-        "1STC": {},
-        "2STA": {},
-        "2STB": {},
-        "2STC": {},
-        "3STA": {},
-        "3STB": {},
-        "3STC": {}
+        "1STA": {
+          "antallElever": 30
+        },
+        "1STB": {
+          "antallElever": 30
+        },
+        "1STC": {
+          "antallElever": 30
+        },
+        "2STA": {
+          "antallElever": 30
+        },
+        "2STB": {
+          "antallElever": 30
+        },
+        "2STC": {
+          "antallElever": 30
+        },
+        "3STA": {
+          "antallElever": 30
+        },
+        "3STB": {
+          "antallElever": 30
+        },
+        "3STC": {
+          "antallElever": 30
+        }
       }
     },
     "Frogn Vgs": {
       "klasser": {
-        "1STA": {},
-        "1STB": {},
-        "1STC": {},
-        "2STA": {},
-        "2STB": {},
-        "2STC": {},
-        "3STA": {},
-        "3STB": {},
-        "3STC": {}
+        "1STA": {
+          "antallElever": 30
+        },
+        "1STB": {
+          "antallElever": 30
+        },
+        "1STC": {
+          "antallElever": 30
+        },
+        "2STA": {
+          "antallElever": 30
+        },
+        "2STB": {
+          "antallElever": 30
+        },
+        "2STC": {
+          "antallElever": 30
+        },
+        "3STA": {
+          "antallElever": 30
+        },
+        "3STB": {
+          "antallElever": 30
+        },
+        "3STC": {
+          "antallElever": 30
+        }
       }
     },
     "Vestby Vgs": {
       "klasser": {
-        "1STA": {},
-        "1STB": {},
-        "1STC": {},
-        "2STA": {},
-        "2STB": {},
-        "2STC": {},
-        "3STA": {},
-        "3STB": {},
-        "3STC": {}
+        "1STA": {
+          "antallElever": 30
+        },
+        "1STB": {
+          "antallElever": 30
+        },
+        "1STC": {
+          "antallElever": 30
+        },
+        "2STA": {
+          "antallElever": 30
+        },
+        "2STB": {
+          "antallElever": 30
+        },
+        "2STC": {
+          "antallElever": 30
+        },
+        "3STA": {
+          "antallElever": 30
+        },
+        "3STB": {
+          "antallElever": 30
+        },
+        "3STC": {
+          "antallElever": 30
+        }
       }
     },
     "Sami Vgs": {
       "klasser": {
-        "1KL": {},
-        "2KL": {},
-        "3KL": {}
+        "1KL": {
+          "antallElever": 30
+        },
+        "2KL": {
+          "antallElever": 30
+        },
+        "3KL": {
+          "antallElever": 30
+        }
       }
     }
   },
