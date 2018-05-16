@@ -1,10 +1,40 @@
-﻿#lagoversikt, #laglisteOverskrift, #lagliste {
+﻿* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    background-color: lightskyblue;
+}
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+#gridContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+.containerStandard {
+    padding: 1rem;
+    background-color: dodgerblue;
+    grid-column: span 2;
+}
+.containerStandard h2 {
+    margin-bottom: 1rem;
+}
+#lagoversikt, #laglisteOverskrift, #lagliste {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
 
+footer {
+    margin-top: 4rem;
+    text-align: center;
+}
 .kol-1 {
-    grid-column: span 2;
+    grid-column: span 1;
 }
 
 .kol-2 {

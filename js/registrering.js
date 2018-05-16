@@ -10,6 +10,8 @@ const selSkole = document.getElementById("selSkole");
 const selKlasse = document.getElementById("selKlasse");
 const selIdrett = document.getElementById("selIdrett");
 
+const contentBox =document.getElementById("contentBox")
+
 // Populerer selectmenyen for skole
 function leggTilSkole(snapshot) {
     let skolenavn = snapshot.key;
@@ -46,6 +48,11 @@ function nyttLag (event) {
         }
     );
     inpLagnavn.value = "";
+    contentBox.style.textAlign = "center";
+    contentBox.innerHTML = `<h1>Ditt lag er registrert!</h1></br><p>Du blir straks sendt tilbake til hovedsiden...</p>`;
+    setTimeout(function () {
+        location.reload();
+    }, 3000);
 }
 // Lyttefunksjoner
 skjemaRegistrering.onsubmit = nyttLag;

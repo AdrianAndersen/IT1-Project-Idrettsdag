@@ -14,6 +14,74 @@ header, main, footer {
     grid-column: span 4;
 }
 
+header {
+    height: 10vh;
+    text-align: center;
+}
+
+main {
+    height: 80vh;
+    width: 100%;
+}
+
+    main h2 {
+        padding: 1rem;
+    }
+
+    main form {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+        z-index: 2;
+    }
+
+#opacityBG {
+    position: fixed;
+    background: #CCC;
+    opacity: .4;
+    height: 80vh;
+    width: 34.5vw;
+    z-index: -2;
+    border-radius: 1%;
+}
+
+footer {
+    height: 6vh;
+    margin: 2vh 0 2vh 0;
+    color: white;
+}
+
+body {
+    background-image: url("../bilder/BGreg.jpg");
+    background-repeat: repeat;
+    background-size: 100%;
+    background-color: #0F6C97;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+input, select, label {
+    height: 2rem;
+    margin: 0.2rem 0 0.2rem 0;
+    font-size: 1rem;
+}
+
+button {
+    height: 2rem;
+    border: none;
+    background-color: limegreen;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+button:hover {
+    background-color: yellowgreen;
+}
+
+footer p {
+    color: white;
+}
+
 @media (max-width: 1200px) {
     header, main, footer {
         grid-column: span 6;
@@ -21,6 +89,18 @@ header, main, footer {
 
     .gridFill {
         grid-column: span 3;
+    }
+
+    #opacityBG {
+        width: 53vw;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    header, main {
+        margin-bottom: 1rem;
     }
 }
 
@@ -32,6 +112,18 @@ header, main, footer {
     .gridFill {
         grid-column: span 2;
     }
+
+    #opacityBG {
+        width: 70vw;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    header, main {
+        margin-bottom: 1rem;
+    }
 }
 
 @media (max-width: 400px) {
@@ -42,6 +134,18 @@ header, main, footer {
     .gridFill {
         grid-column: span 1;
     }
+
+    #opacityBG {
+        width: 90vw;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    header, main {
+        margin-bottom: 0.3rem;
+    }
 }
 
 @media (max-width: 300px) {
@@ -50,56 +154,15 @@ header, main, footer {
         margin: 1vw;
     }
 
-    .gridFill {
-        grid-column: span 0;
+    #opacityBG {
+        width: 100vw;
     }
-}
 
-header {
-    height: 10vh;
-    text-align: center;
-}
+    h1 {
+        font-size: 1rem;
+    }
 
-main {
-    height: 80vh;
-    width: 100%;
-}
-
-#container {
-    width: 100%;
-}
-main h2 {
-    padding: 1rem;
-}
-main form {
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-}
-
-#opacityBG {
-    position: fixed;
-    background: #CCC;
-    opacity: .4;
-    height: 80vh;
-    width: 35vw;
-    z-index: -2;
-}
-
-footer {
-    height: 6vh;
-    margin: 2vh 0 2vh 0;
-    color: white;
-}
-
-body {
-    background-image: url("../bilder/BGreg.jpg");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: #0F6C97;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    header, main {
+        margin-bottom: 1.5rem;
+    }
 }

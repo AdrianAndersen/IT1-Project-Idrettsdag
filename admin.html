@@ -11,39 +11,49 @@
         <h1>Administrasjonsside for Adrians idrettsdag</h1>
     </header>
     <main>
-        <h2>Administrer idretter</h2>
-
-        <button id="knappVisSkjemaNyIdrett">Ny Idrett</button>
-        <form id="skjemaNyIdrett" style="display: none">
-            <h3>Legg til en ny idrett</h3>
-            <label for="inpIdrettAdmin">Idrettens navn:</label>
-            <input type="text" id="inpIdrettAdmin" required placeholder="Idrettens navn">
-            <label for="inpOppmotested">Oppmøtested:</label>
-            <input type="text" id="inpOppmotested" required>
-            <label for="inpOppmotetid">Oppmøtetid:</label>
-            <input type="time" id="inpOppmotetid" required>
-            <button id="knappLeggTilNyIdrett" type="submit">Legg til idrett</button>
-            <button id="knappAvbrytNyIdrett" type="button">Avbryt</button>
-        </form>
-        <form id="skjemaEndreIdretter">
-            <label for="selIdrettAdmin">Velg idrett</label>
-            <select id="selIdrettAdmin"></select>
-            <button>Rediger idrett</button>
-            <button>Fjern idrett</button>
-        </form>
-        <h2>Administrer skoler og klasser</h2>
-        <form id="skjemaEndreSkoler">
-            <label for="selSkoleAdmin">Velg skole</label>
-            <select id="selSkoleAdmin"></select>
-            <button>Fjern skole</button>
-        </form>
-        <h2>Administrer lag</h2>
-        <form id="skjemaEndreLag">
-            <label for="selLagAdmin">Velg lag</label>
-            <select id="selLagAdmin"></select>
-            <button>Rediger</button>
-            <button>Slett lag</button>
-        </form>
+        <div id="gridContainer">
+            <div class="kol-2"></div>
+            <div id="containerAdminIdrett" class="containerStandard">
+                <h2>Administrer idretter</h2>
+                <button id="knappVisSkjemaNyIdrett">Ny Idrett</button>
+                <form id="skjemaNyIdrett" style="display: none">
+                    <h3>Legg til en ny idrett</h3>
+                    <label for="inpIdrettAdmin">Idrettens navn:</label>
+                    <input type="text" id="inpIdrettAdmin" required placeholder="Idrettens navn">
+                    <label for="inpOppmotested">Oppmøtested:</label>
+                    <input type="text" id="inpOppmotested" required>
+                    <label for="inpOppmotetid">Oppmøtetid:</label>
+                    <input type="time" id="inpOppmotetid" required>
+                    <button id="knappLeggTilNyIdrett" type="submit">Legg til idrett</button>
+                    <button id="knappAvbrytNyIdrett" type="button">Avbryt</button>
+                </form>
+                <form id="skjemaEndreIdretter">
+                    <label for="selIdrettAdmin">Velg idrett</label>
+                    <select id="selIdrettAdmin"></select>
+                    <button>Rediger idrett</button>
+                    <button>Fjern idrett</button>
+                </form>
+            </div>
+            <div class="kol-1"></div>
+            <div id="containerAdminSkoler" class="containerStandard">
+                <h2>Administrer skoler og klasser</h2>
+                <form id="skjemaEndreSkoler">
+                    <label for="selSkoleAdmin">Velg skole</label>
+                    <select id="selSkoleAdmin"></select>
+                    <button>Fjern skole</button>
+                </form>
+            </div>
+            <div class="kol-1"></div>
+            <div id="containerAdminLag" class="containerStandard">
+                <h2>Administrer lag</h2>
+                <form id="skjemaEndreLag">
+                    <label for="selLagAdmin">Velg lag</label>
+                    <select id="selLagAdmin"></select>
+                    <button>Rediger</button>
+                    <button>Slett lag</button>
+                </form>
+            </div>
+        </div>
         <div id="laglisteOverskrift" style="display: grid">
             <div class="kol-2"></div>
             <h1 class="kol-10">Lagoversikt</h1>
