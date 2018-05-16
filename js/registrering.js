@@ -21,6 +21,7 @@ function leggTilSkole(snapshot) {
 
 // Populerer selectmenyen for klasse
 function leggTilKlasse(snapshot) {
+    console.log("leggTilKlasse");
     let klassenavn = snapshot.key;
     let option = `<option value="${klassenavn}">${klassenavn}</option>`;
     selKlasse.innerHTML += option;
@@ -55,6 +56,8 @@ function nyttLag (event) {
     }, 3000);
 }
 // Lyttefunksjoner
+const skolee
 skjemaRegistrering.onsubmit = nyttLag;
 skoler.on("child_added", leggTilSkole);
 idretter.on("child_added", leggTilIdrett);
+
