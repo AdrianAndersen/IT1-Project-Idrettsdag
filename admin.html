@@ -15,7 +15,7 @@
             <div class="kol-2"></div>
             <div id="containerAdminIdrett" class="containerStandard">
                 <h2>Administrer idretter</h2>
-                <button id="knappVisSkjemaNyIdrett">Ny Idrett</button>
+                <button id="knappVisSkjemaNyIdrett" class="knappGronn">Ny Idrett</button>
                 <form id="skjemaNyIdrett" style="display: none">
                     <h3>Legg til en ny idrett</h3>
                     <label for="inpIdrettAdmin">Idrettens navn:</label>
@@ -24,14 +24,14 @@
                     <input type="text" id="inpOppmotested" required>
                     <label for="inpOppmotetid">Oppmøtetid:</label>
                     <input type="time" id="inpOppmotetid" required>
-                    <button id="knappLeggTilNyIdrett" type="submit">Legg til idrett</button>
-                    <button id="knappAvbrytNyIdrett" type="button">Avbryt</button>
+                    <button id="knappLeggTilNyIdrett" class="knappGronn" type="submit">Legg til idrett</button>
+                    <button id="knappAvbrytNyIdrett" class="knappRod" type="button">Avbryt</button>
                 </form>
                 <form id="skjemaEndreIdretter">
                     <label for="selIdrettAdmin">Velg idrett</label>
                     <select id="selIdrettAdmin"></select>
-                    <button>Rediger idrett</button>
-                    <button>Fjern idrett</button>
+                    <button class="knappOransje">Rediger idrett</button>
+                    <button class="knappRod">Fjern idrett</button>
                 </form>
             </div>
             <div class="kol-1"></div>

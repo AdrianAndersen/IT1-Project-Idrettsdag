@@ -34,13 +34,30 @@ function nyIdrett(event) {
     let navn = inpIdrettAdmin.value;
     let oppmotested = inpOppmotested.value;
     let oppmotetid = inpOppmotetid.value;
-    database.ref("lag/navn");
-    lag.push(
+    idretter.push(
         {
             "oppmotested": oppmotested,
             "oppmotetid": oppmotetid
         }
         )
+}
+
+function leggTilIdretter(snapshot) {
+    let idrett = snapshot.key;
+    let option = `<option value="${idrett}">${idrett}</option>`;
+    selIdrettAdmin.innerHTML += option;
+}
+
+function leggTilSkoler(snapshot) {
+    let skole = snapshot.key;
+    let option = `<option value="${skole}">${skole}</option>`;
+    selSkoleAdmin.innerHTML += option;
+}
+
+function leggTilLag(snapshot) {
+    let lag = snapshot.key;
+    let option = `<option value="${lag}">${lag}</option>`;
+    selLagAdmin.innerHTML += option;
 }
 
 // Viser bestillingene, sortert og filtrert
@@ -71,5 +88,8 @@ function visSorterteLag() {
 knappLeggTilNyIdrett.addEventListener("click", nyIdrett);
 knappVisSkjemaNyIdrett.addEventListener("click", visSkjemaNyIdrett);
 knappAvbrytNyIdrett.addEventListener("click", skjulSkjemaNyIdrett);
+idretter.on("child_added", leggTilIdretter);
+skoler.on("child_added", leggTilSkoler);
+lag.on("child_added", leggTilLag);
 // Viser lagene når du går inn på siden
 visSorterteLag();
