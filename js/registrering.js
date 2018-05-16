@@ -10,7 +10,7 @@ const selSkole = document.getElementById("selSkole");
 const selKlasse = document.getElementById("selKlasse");
 const selIdrett = document.getElementById("selIdrett");
 
-const contentBox =document.getElementById("contentBox")
+const contentBox = document.getElementById("contentBox")
 
 // Populerer selectmenyen for skole
 function leggTilSkole(snapshot) {
@@ -19,12 +19,20 @@ function leggTilSkole(snapshot) {
     selSkole.innerHTML += option;
 }
 
-// Populerer selectmenyen for klasse
-function leggTilKlasse(snapshot) {
-    console.log("leggTilKlasse");
-    let klassenavn = snapshot.key;
-    let option = `<option value="${klassenavn}">${klassenavn}</option>`;
-    selKlasse.innerHTML += option;
+// Populerer klasse-dropdown med verdier fra den valgte skolen
+function velgSkole(event) {
+    selKlasse.innerHTML = "";
+    const skole = event.target.value;
+    if (!skole) {
+        return;
+    }
+    const klasser = database.ref(`skoler/${skole}`);
+    klasser.once("child_added", (snapshotData) => {
+        snapshotData.forEach(function (childSnapshot) {
+            selKlasse.innerHTML += `<option value="${childSnapshot.key}">${childSnapshot.key}</option>`;
+        });
+    })
+
 }
 
 // Populerer selectmenyen for Idrett
@@ -34,30 +42,58 @@ function leggTilIdrett(snapshot) {
     selIdrett.innerHTML += option;
 }
 
-function nyttLag (event) {
+// Sjekker om det finnes et lag med det valgte lagnavnet, dersom det ikke gjør det, legges det til et nytt lag
+function nyttLag(event) {
     event.preventDefault();
-    let lagnavn = inpLagnavn.value;
-    let skole = selSkole.value;
-    let klasse = selKlasse.value;
-    let idrett = selIdrett.value;
-    lag.push(
-        {
-            "lagnavn": lagnavn,
-            "skole": skole,
-            "klasse": klasse,
-            "idrett": idrett 
+    const lagnavn = inpLagnavn.value;
+
+    lag.once("value", function (snapshotData) {
+        const finnesFraFor = snapshotData.hasChild(lagnavn);
+        if (finnesFraFor) {
+            alert(`"${lagnavn}" er allerede registrert.`);
+            return;
         }
-    );
-    inpLagnavn.value = "";
-    contentBox.style.textAlign = "center";
-    contentBox.innerHTML = `<h1>Ditt lag er registrert!</h1></br><p>Du blir straks sendt tilbake til hovedsiden...</p>`;
-    setTimeout(function () {
-        location.reload();
-    }, 3000);
+
+        let skole = selSkole.value;
+        let klasse = selKlasse.value;
+        let idrett = selIdrett.value;
+
+        // Sjekker at brukeren faktisk velger det vi ønsker. 
+        if (skole == "ugyldig") {
+            alert("Du må velge en skole!");
+            return;
+        }
+        if (klasse == "ugyldig") {
+            alert("Du må velge en klasse!");
+            return;
+        }
+        if (idrett == "ugyldig") {
+            alert("Du må velge en idrett!");
+            return;
+        }
+
+
+        let nyttLag = database.ref("lag/" + lagnavn);
+        nyttLag.set(
+            {
+                "skole": skole,
+                "klasse": klasse,
+                "idrett": idrett
+            }
+        );
+        // Gir brukeren en bekreftelse på at laget er registrert
+        inpLagnavn.value = "";
+        contentBox.style.textAlign = "center";
+        contentBox.innerHTML = `<h1>Ditt lag er registrert!</h1></br><p>Du blir straks sendt tilbake til hovedsiden...</p>`;
+        setTimeout(function () {
+            location.reload();
+        }, 3000);
+    });
 }
+
 // Lyttefunksjoner
-const skolee
-skjemaRegistrering.onsubmit = nyttLag;
+selSkole.onchange = velgSkole;
+skjemaRegistrering.addEventListener("submit", nyttLag)
 skoler.on("child_added", leggTilSkole);
 idretter.on("child_added", leggTilIdrett);
 

@@ -13,8 +13,9 @@
     <main>
         <div id="gridContainer">
             <div class="kol-2"></div>
+            <!--Administrasjonsside for idretter-->
             <div id="containerAdminIdrett" class="containerStandard">
-                <h2>Administrer idretter</h2>
+                <h2>Idretter</h2>
                 <button id="knappVisSkjemaNyIdrett" class="knappGronn">Ny Idrett</button>
                 <form id="skjemaNyIdrett" style="display: none">
                     <h3>Legg til en ny idrett</h3>
@@ -27,51 +28,58 @@
                     <button id="knappLeggTilNyIdrett" class="knappGronn" type="submit">Legg til idrett</button>
                     <button id="knappAvbrytNyIdrett" class="knappRod" type="button">Avbryt</button>
                 </form>
-                <form id="skjemaEndreIdretter">
+                <form id="skjemaEndreIdrett" style="display: none">
+                    <h3>Oppdater idrett</h3>
+                    <input type="hidden" id="inpGammeltIdrettsnavn" />
+                    <label for="inpEndretIdrettsnavn">Idrettens navn:</label>
+                    <input type="text" id="inpEndretIdrettsnavn" required placeholder="Idrettens navn">
+                    <label for="inpEndretSted">Oppmøtested:</label>
+                    <input type="text" id="inpEndretSted" required>
+                    <label for="inpEndretTid">Oppmøtetid:</label>
+                    <input type="time" id="inpEndretTid" required>
+                    <button id="knappEndreIdrett" class="knappGronn" type="submit">Oppdater</button>
+                    <button id="knappAvbrytEndreIdrett" class="knappRod" type="button">Avbryt</button>
+                </form>
+                <form id="skjemaVelgEndreIdretter">
                     <label for="selIdrettAdmin">Velg idrett</label>
                     <select id="selIdrettAdmin"></select>
-                    <button class="knappOransje">Rediger idrett</button>
-                    <button class="knappRod">Fjern idrett</button>
+                    <button id="knappVelgEndreIdrett" class="knappOransje">Rediger idrett</button>
+                    <button id="knappFjernIdrett" class="knappRod">Fjern idrett</button>
                 </form>
             </div>
             <div class="kol-1"></div>
+            <!--Administrasjonsside for skoler-->
             <div id="containerAdminSkoler" class="containerStandard">
-                <h2>Administrer skoler og klasser</h2>
+                <h2>Skoler</h2>
                 <form id="skjemaEndreSkoler">
                     <label for="selSkoleAdmin">Velg skole</label>
                     <select id="selSkoleAdmin"></select>
-                    <button>Fjern skole</button>
+                    <button class="knappRod" id="knappFjernSkole">Fjern skole</button>
                 </form>
             </div>
             <div class="kol-1"></div>
+            <!--Administrasjonsside for lag-->
             <div id="containerAdminLag" class="containerStandard">
-                <h2>Administrer lag</h2>
-                <form id="skjemaEndreLag">
-                    <label for="selLagAdmin">Velg lag</label>
+                <h2>Lag</h2>
+                <form id="skjemaVelgEndreLag">
+                    <label for="selLagAdmin">Velg lag</label><br />
                     <select id="selLagAdmin"></select>
-                    <button>Rediger</button>
-                    <button>Slett lag</button>
+                    <button class="knappOransje" id="knappVisEndreLag">Rediger</button>
+                    <button class="knappRod" id="knappSlettLag">Slett lag</button>
+                </form>
+                <form id="skjemaEndreLag" style="display: none">
+                    <h3>Oppdater lag</h3>
+                    <input type="hidden" id="inpGammeltLagnavn" />
+                    <label for="inpEndretLagnavn">Idrettens navn:</label>
+                    <input type="text" id="inpEndretLagnavn" required placeholder="Lagets navn">
+                    <button id="knappEndreLag" class="knappGronn" type="submit">Oppdater</button>
+                    <button id="knappAvbrytEndreLag" class="knappRod" type="button">Avbryt</button>
                 </form>
             </div>
         </div>
         <div id="laglisteOverskrift" style="display: grid">
             <div class="kol-2"></div>
             <h1 class="kol-10">Lagoversikt</h1>
-            <div class="kol-2"></div>
-            <h4>Vis</h4>
-            <select class="kol-2" id="selRomtypeOversikt">
-                <option value="" selected>Alle</option>
-            </select>
-            <div class="kol-7"></div>
-            <div class="kol-2"></div>
-            <h4>Sorter etter</h4>
-            <select class="kol-2" id="orderby">
-                <option value="lagnavn">Lagnavn</option>
-                <option value="idrett">Idrett</option>
-                <option value="skole">Skole</option>
-                <option value="klasse">Klasse</option>
-            </select>
-            <div class="kol-7"></div>
             <div class="kol-2"></div>
             <h3 class="kol-2">Lagnavn</h3>
             <h3 class="kol-2">Idrett</h3>
@@ -84,16 +92,16 @@
     <footer>Siden er laget av Adrian A. Andersen, 2STB i faget IT1 | Ski Vgs. 2018</footer>
     <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
     <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyD3HUb5UXOqK3DKE0NESbsYxM0y9sxuEo4",
-    authDomain: "project-idrettsdag.firebaseapp.com",
-    databaseURL: "https://project-idrettsdag.firebaseio.com",
-    projectId: "project-idrettsdag",
-    storageBucket: "project-idrettsdag.appspot.com",
-    messagingSenderId: "812385524527"
-  };
-  firebase.initializeApp(config);
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyD3HUb5UXOqK3DKE0NESbsYxM0y9sxuEo4",
+            authDomain: "project-idrettsdag.firebaseapp.com",
+            databaseURL: "https://project-idrettsdag.firebaseio.com",
+            projectId: "project-idrettsdag",
+            storageBucket: "project-idrettsdag.appspot.com",
+            messagingSenderId: "812385524527"
+        };
+        firebase.initializeApp(config);
     </script>
     <script src="js/admin.js"></script>
 </body>

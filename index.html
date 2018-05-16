@@ -15,23 +15,29 @@
     <div class="gridFill"></div>
     <div class="gridFill"></div>
     <main id="contentBox">
-            <div id="opacityBG"></div>
-            <h2>Registrering</h2>
-            <form id="skjemaRegistrering">
-                <label for="inpLagnavn">Lagnavn:</label>
-                <input type="text" id="inpLagnavn" required placeholder="Deres lagnavn" />
+        <div id="opacityBG"></div>
+        <h2>Registrering</h2>
+        <form id="skjemaRegistrering">
+            <label for="inpLagnavn">Lagnavn:</label>
+            <input type="text" id="inpLagnavn" required placeholder="Deres lagnavn" />
 
-                <label for="selSkole">Skole:</label>
-                <select id="selSkole"></select>
+            <label for="selSkole">Skole:</label>
+            <select id="selSkole">
+                <option value="ugyldig"> -- Velg skole -- </option>
+            </select>
 
-                <label for="selKlasse">Klasse:</label>
-                <select id="selKlasse"><option>1STA</option></select>
+            <label for="selKlasse">Klasse:</label>
+            <select id="selKlasse">
+                <option value="ugyldig"> -- Velg klasse -- </option>
+            </select>
 
-                <label for="selIdrett">Idrett:</label>
-                <select id="selIdrett"></select>
+            <label for="selIdrett">Idrett:</label>
+            <select id="selIdrett">
+                <option value="ugyldig"> -- Velg idrett -- </option>
+            </select>
 
-                <button type="submit">Registrer</button>
-            </form>
+            <button type="submit">Registrer</button>
+        </form>
     </main>
     <div class="gridFill"></div>
     <div class="gridFill"></div>
