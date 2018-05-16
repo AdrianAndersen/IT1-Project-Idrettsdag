@@ -10,6 +10,26 @@ const selSkole = document.getElementById("selSkole");
 const selKlasse = document.getElementById("selKlasse");
 const selIdrett = document.getElementById("selIdrett");
 
+// Populerer selectmenyen for skole
+function leggTilSkole(snapshot) {
+    let skolenavn = snapshot.key;
+    let option = `<option value="${skolenavn}">${skolenavn}</option>`;
+    selSkole.innerHTML += option;
+}
+
+// Populerer selectmenyen for klasse
+function leggTilKlasse(snapshot) {
+    let klassenavn = snapshot.key;
+    let option = `<option value="${klassenavn}">${klassenavn}</option>`;
+    selKlasse.innerHTML += option;
+}
+
+// Populerer selectmenyen for Idrett
+function leggTilIdrett(snapshot) {
+    let idrettsnavn = snapshot.key;
+    let option = `<option value="${idrettsnavn}">${idrettsnavn}</option>`;
+    selIdrett.innerHTML += option;
+}
 
 function nyttLag (event) {
     event.preventDefault();
@@ -29,3 +49,5 @@ function nyttLag (event) {
 }
 // Lyttefunksjoner
 skjemaRegistrering.onsubmit = nyttLag;
+skoler.on("child_added", leggTilSkole);
+idretter.on("child_added", leggTilIdrett);

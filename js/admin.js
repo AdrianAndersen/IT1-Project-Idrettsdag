@@ -28,6 +28,21 @@ function skjulSkjemaNyIdrett(event) {
     skjemaEndreIdretter.style.display = "block";
     knappVisSkjemaNyIdrett.style.display = "block";
 }
+
+function nyIdrett(event) {
+    event.preventDefault();
+    let navn = inpIdrettAdmin.value;
+    let oppmotested = inpOppmotested.value;
+    let oppmotetid = inpOppmotetid.value;
+    database.ref("lag/navn");
+    lag.push(
+        {
+            "oppmotested": oppmotested,
+            "oppmotetid": oppmotetid
+        }
+        )
+}
+
 // Viser bestillingene, sortert og filtrert
 function visSorterteLag() {
     let romtypeId = document.getElementById("selRomtypeOversikt").value;
@@ -53,6 +68,7 @@ function visSorterteLag() {
 }
 
 // Lyttefunskjoner
+knappLeggTilNyIdrett.addEventListener("click", nyIdrett);
 knappVisSkjemaNyIdrett.addEventListener("click", visSkjemaNyIdrett);
 knappAvbrytNyIdrett.addEventListener("click", skjulSkjemaNyIdrett);
 // Viser lagene når du går inn på siden
