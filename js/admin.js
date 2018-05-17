@@ -49,13 +49,13 @@ function nyIdrett(event) {
     let oppmotetid = inpOppmotetid.value;
 
     let nyIdrett = database.ref("idretter/" + navn);
-
     nyIdrett.set(
         {
             "oppmotested": oppmotested,
             "oppmotetid": oppmotetid
         }
     )
+    skjulSkjemaNyIdrett(event);
 }
 
 // Viser skjema for å lage ny idrett
